@@ -1,0 +1,1 @@
+# shopify-school-homepage-andrew-motko
