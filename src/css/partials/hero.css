@@ -1,28 +1,23 @@
 .hero {
   position: relative;
   width: 100%;
-  height: calc(100vh - 88px);
+  height: calc(100vh - 60px);
   min-height: 500px;
   max-height: 750px;
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: 5%;
-}
-
-@media (max-width: 767px) {
-  .hero {
-    height: calc(100vh - 60px);
-    padding: 0 5%;
-    justify-content: center;
-    align-items: center;
-  }
+  justify-content: center;
+  padding: 0 5%;
 }
 
 @media (min-width: 768px) {
   .hero {
+    height: calc(100vh - 88px);
     min-height: 600px;
+    padding-left: 5%;
+    padding-right: 0;
+    justify-content: flex-start;
   }
 }
 
@@ -55,47 +50,50 @@
   background-size: cover;
   background-repeat: no-repeat;
   flex-shrink: 0;
-  display: block !important;
-  opacity: 1 !important;
 }
 
 .hero__swiper .swiper-slide:nth-child(1),
 .hero__swiper .hero__slide-1 {
-  background-image: url("../img/hero/Slide1.webp");
+  background-image: url("/img/hero/Slide1.webp");
 }
 
 .hero__swiper .swiper-slide:nth-child(2),
 .hero__swiper .hero__slide-2 {
-  background-image: url("../img/hero/Slide2.webp");
+  background-image: url("/img/hero/Slide2.webp");
 }
 
 .hero__swiper .swiper-slide:nth-child(3),
 .hero__swiper .hero__slide-3 {
-  background-image: url("../img/hero/Slide3.webp");
+  background-image: url("/img/hero/Slide3.webp");
 }
 
 .hero__swiper .hero__slide-1-duplicate {
-  background-image: url("../img/hero/Slide1.webp");
+  background-image: url("/img/hero/Slide1.webp");
 }
 
-@media (max-width: 767px) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min--moz-device-pixel-ratio: 2),
+       only screen and (-o-min-device-pixel-ratio: 2/1),
+       only screen and (min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi),
+       only screen and (min-resolution: 2dppx) {
   .hero__swiper .swiper-slide:nth-child(1),
   .hero__swiper .hero__slide-1 {
-    background-image: url("../img/hero/Slide1.webp");
+    background-image: url("/img/hero/Slide1@2x.webp");
   }
   
   .hero__swiper .swiper-slide:nth-child(2),
   .hero__swiper .hero__slide-2 {
-    background-image: url("../img/hero/Slide2.webp");
+    background-image: url("/img/hero/Slide2@2x.webp");
   }
   
   .hero__swiper .swiper-slide:nth-child(3),
   .hero__swiper .hero__slide-3 {
-    background-image: url("../img/hero/Slide3.webp");
+    background-image: url("/img/hero/Slide3@2x.webp");
   }
   
   .hero__swiper .hero__slide-1-duplicate {
-    background-image: url("../img/hero/Slide1.webp");
+    background-image: url("/img/hero/Slide1@2x.webp");
   }
 }
 
@@ -104,30 +102,35 @@
   z-index: 10;
   color: var(--color-white);
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
   .hero__content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    display: block;
   }
 }
 
 .hero__content-inner {
-  max-width: 650px;
+  max-width: 347px;
   width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
   .hero__content-inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    max-width: 347px;
+    max-width: 650px;
+    margin: 0;
+    display: block;
+    text-align: left;
   }
 }
 
@@ -138,11 +141,12 @@
   color: var(--color-white);
   text-transform: uppercase;
   margin-bottom: var(--gap-sm);
+  text-align: center;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
   .hero__title {
-    text-align: center;
+    text-align: left;
   }
 }
 
@@ -151,11 +155,12 @@
   line-height: var(--body-line-height-large);
   color: var(--color-white);
   margin-bottom: var(--gap-lg);
+  text-align: center;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
   .hero__text {
-    text-align: center;
+    text-align: left;
   }
 }
 
