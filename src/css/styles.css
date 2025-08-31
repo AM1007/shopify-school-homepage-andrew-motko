@@ -7,8 +7,8 @@
 
 /* Partials */
 @import url('./partials/header.css');
-/* @import url('./utils/hero.css');
-@import url('./utils/featured.css');
+@import url('./partials/hero.css');
+/* @import url('./utils/featured.css');
 @import url('./utils/questions.css');
 @import url('./utils/product.css');
 @import url('./utils/help.css');
