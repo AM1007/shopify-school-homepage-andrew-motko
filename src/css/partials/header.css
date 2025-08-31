@@ -3,6 +3,10 @@
   padding-bottom: clamp(16px, 4vw, 30px);
 }
 
+.header-container{
+  margin: 0 auto;
+}
+
 .header__content {
   display: flex;
   align-items: center;

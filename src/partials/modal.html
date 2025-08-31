@@ -1,1 +1,38 @@
-<div>modal</div>
+<div class="modal" id="modal">
+  <div class="modal__backdrop"></div>
+  <div class="modal__wrapper">
+    <button type="button" class="modal__close" id="modalClose" aria-label="Close modal"></button>
+    <div class="modal__body">
+      <h2 class="modal__title">Here's $10 Off Your First Order!</h2>
+      <p class="modal__description">Join our newsletter and get a $10 discount code sent straight to your inbox. New customers only.</p>
+      <form class="modal__form" id="modalForm">
+        <label class="modal__label">
+          <span class="modal__label-text">Email</span>
+          <input 
+            type="email" 
+            name="email" 
+            class="modal__input" 
+            placeholder="Enter email" 
+            required 
+            autocomplete="email" 
+            aria-required="true"
+          >
+        </label>
+        <button type="submit" class="modal__button btn btn--black">Send</button>
+      </form>
+    </div>
+    <div class="modal__image">
+      <picture>
+        <source 
+          media="(min-device-pixel-ratio: 2), (min-resolution: 192dpi)" 
+          srcset="/img/modal/nike@2x.webp"
+        >
+        <img 
+          src="/img/modal/nike.webp" 
+          alt="Nike sneakers" 
+          class="modal__image-content"
+        >
+      </picture>
+    </div>
+  </div>
+</div>
