@@ -1,0 +1,99 @@
+.help {
+  background-color: #f5f5f5;
+  padding-top: clamp(60px, 8vw, 80px);
+  padding-bottom: clamp(60px, 8vw, 80px);
+}
+
+.help__container {
+  margin: 0 auto;
+  max-width: 904px;
+}
+
+.help__title {
+  font-size: var(--h2-font-size);
+  line-height: var(--h2-line-height);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+  text-align: center;
+  margin-bottom: clamp(32px, 6vw, 48px);
+}
+
+.help__form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--gap-md);
+  width: 100%;
+}
+
+.help__label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-xs);
+  width: 100%;
+}
+
+.help__label:nth-child(1),
+.help__label:nth-child(2) {
+  width: calc(50% - 12px);
+}
+
+@media (max-width: 767px) {
+  .help__label:nth-child(1),
+  .help__label:nth-child(2) {
+    width: 100%;
+  }
+}
+
+.help__label-text {
+  font-size: var(--body-font-size-large);
+  line-height: var(--body-line-height-large);
+  color: var(--color-dark);
+  font-weight: var(--font-weight-regular);
+}
+
+.help__input,
+.help__textarea {
+  width: 100%;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-stroke);
+  border-radius: var(--border-radius-sm);
+  padding: var(--gap-sm);
+  font-size: var(--body-font-size-large);
+  line-height: var(--body-line-height-large);
+  color: var(--color-dark);
+  box-sizing: border-box;
+  transition: border-color var(--animation-normal) var(--animation-curve);
+  /* -webkit-appearance: none; */
+  outline: none;
+}
+
+.help__input::placeholder,
+.help__textarea::placeholder {
+  color: var(--color-gray);
+  line-height: var(--body-line-height-large);
+}
+
+.help__input:focus,
+.help__textarea:focus {
+  border-color: var(--color-dark);
+  outline: none;
+}
+
+.help__input:active,
+.help__textarea:active {
+  border-color: var(--color-dark);
+}
+
+.help__textarea {
+  height: 152px;
+  vertical-align: top;
+  resize: none;
+}
+
+.help__button {
+  margin: calc(var(--gap-sm) / 2) auto 0 auto;
+  width: 100%;
+  max-width: 200px;
+}
