@@ -1,0 +1,220 @@
+.footer {
+  padding: clamp(60px, 8vw, 80px) 0 var(--gap-md) 0;
+}
+
+.footer__container {
+  margin: 0 auto;
+}
+
+.footer__content {
+  width: 100%;
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-bottom: var(--gap-xl);
+}
+
+@media (min-width: 768px) {
+  .footer__top {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap-md);
+  }
+}
+
+@media (min-width: 1280px) {
+  .footer__top {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gap-lg);
+  }
+}
+
+.footer__column {
+  width: 100%;
+  border-top: 1px solid var(--color-stroke);
+}
+
+@media (min-width: 1280px) {
+  .footer__column {
+    border: none;
+  }
+}
+
+.footer__column:last-child {
+  border-bottom: 1px solid var(--color-stroke);
+}
+
+@media (min-width: 1280px) {
+  .footer__column:last-child {
+    border-bottom: none;
+  }
+}
+
+.footer__accordion-item {
+  display: grid;
+  grid-template-rows: auto 0fr;
+  transition: grid-template-rows var(--animation-normal) var(--animation-curve);
+}
+
+@media (min-width: 1280px) {
+  .footer__accordion-item {
+    grid-template-rows: auto 1fr;
+  }
+}
+
+.footer__accordion-item[open] {
+  grid-template-rows: auto 1fr;
+}
+
+.footer__accordion-trigger {
+  padding: var(--gap-sm) 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap-sm);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  list-style: none;
+  width: 100%;
+}
+
+@media (min-width: 1280px) {
+  .footer__accordion-trigger {
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+.footer__accordion-trigger::-webkit-details-marker {
+  display: none;
+}
+
+.footer__accordion-trigger::marker {
+  display: none;
+}
+
+.footer__accordion-title {
+  font-size: var(--body-font-size-large);
+  line-height: var(--body-line-height-large);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-dark);
+  margin: 0;
+}
+
+@media (min-width: 1280px) {
+  .footer__accordion-title {
+    margin-bottom: var(--gap-sm);
+  }
+}
+
+.footer__accordion-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  fill: var(--color-dark);
+  transition: transform var(--animation-normal) var(--animation-curve);
+}
+
+@media (min-width: 1280px) {
+  .footer__accordion-icon {
+    display: none;
+  }
+}
+
+.footer__accordion-content {
+  overflow: hidden;
+  padding: 0;
+}
+
+@media (min-width: 1280px) {
+  .footer__accordion-content {
+    padding: 0;
+  }
+}
+
+.footer__accordion-item[open] .footer__accordion-content {
+  padding-bottom: var(--gap-sm);
+}
+
+@media (min-width: 1280px) {
+  .footer__accordion-item[open] .footer__accordion-content {
+    padding-bottom: 0;
+  }
+}
+
+.footer__nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity var(--animation-normal) var(--animation-curve), 
+              transform var(--animation-normal) var(--animation-curve);
+}
+
+@media (min-width: 1280px) {
+  .footer__nav-menu {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer__accordion-item[open] .footer__nav-menu {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.footer__nav-item:not(:last-child) {
+  margin-bottom: 14px;
+}
+
+.footer__nav-link {
+  font-size: var(--body-font-size-medium);
+  line-height: var(--body-line-height-medium);
+  color: var(--color-gray);
+  text-decoration: none;
+  transition: color var(--animation-normal) var(--animation-curve);
+}
+
+.footer__nav-link:hover,
+.footer__nav-link:focus {
+  color: var(--color-dark);
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px var(--gap-lg);
+}
+
+@media (max-width: 479px) {
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+.footer__copyright,
+.footer__bottom-link {
+  font-size: var(--body-font-size-medium);
+  line-height: var(--body-line-height-medium);
+  color: var(--color-gray);
+  margin: 0;
+  transition: color var(--animation-normal) var(--animation-curve);
+}
+
+.footer__bottom-link {
+  text-decoration: none;
+}
+
+.footer__bottom-link:hover,
+.footer__bottom-link:focus {
+  color: var(--color-dark);
+}
