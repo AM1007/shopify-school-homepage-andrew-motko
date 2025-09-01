@@ -4,7 +4,7 @@ A responsive landing page for a shoe store built with vanilla HTML, CSS, and Jav
 
 ## 🚀 Demo
 
-[Live Demo](https://your-demo-link.netlify.app) | [Repository](https://github.com/your-username/shopify-school-homepage-andrew-motko)
+[Live Demo](https://shopify-school-homepage-andrew-motk.vercel.app) 
 
 ## 📋 Features
 
@@ -60,6 +60,14 @@ src/
 │   ├── product.js         # Product gallery interactions
 │   └── questions-accordeon.js # FAQ accordion
 ├── partials/              # HTML components
+│   ├── featured.html
+│   ├── footer.html
+│   ├── header.html
+│   ├── help.html
+│   ├── hero.html
+│   ├── modal.html
+│   ├── product.html
+│   └── questions.html
 └── svg/                   # SVG sprite icons
 ```
 
