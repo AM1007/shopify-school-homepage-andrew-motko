@@ -23,35 +23,30 @@ class Modal {
   }
 
   bindEvents() {
-    // Close button click
     if (this.closeBtn) {
       this.closeBtn.addEventListener('click', () => {
         this.hide();
       });
     }
 
-    // Backdrop click to close
     if (this.backdrop) {
       this.backdrop.addEventListener('click', () => {
         this.hide();
       });
     }
 
-    // Escape key to close
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && this.isVisible()) {
         this.hide();
       }
     });
 
-    // Form submission
     if (this.form) {
       this.form.addEventListener('submit', (e) => {
         this.handleFormSubmit(e);
       });
     }
 
-    // Prevent modal wrapper clicks from closing modal
     const modalWrapper = this.modal.querySelector('.modal__wrapper');
     if (modalWrapper) {
       modalWrapper.addEventListener('click', (e) => {
@@ -61,7 +56,6 @@ class Modal {
   }
 
   scheduleShow() {
-    // Check if modal was already shown (using sessionStorage to track during session)
     if (sessionStorage.getItem('modalShown')) {
       return;
     }
@@ -77,10 +71,8 @@ class Modal {
     this.modal.classList.add('modal--show');
     document.body.classList.add('modal-open');
     
-    // Mark modal as shown for this session
     sessionStorage.setItem('modalShown', 'true');
 
-    // Focus trap - focus on close button for accessibility
     if (this.closeBtn) {
       setTimeout(() => {
         this.closeBtn.focus();
@@ -105,13 +97,11 @@ class Modal {
     const formData = new FormData(this.form);
     const email = formData.get('email');
 
-    // Basic email validation
     if (!this.isValidEmail(email)) {
       this.showError('Please enter a valid email address');
       return;
     }
 
-    // Simulate form submission
     this.submitForm(email);
   }
 
@@ -121,21 +111,17 @@ class Modal {
   }
 
   showError(message) {
-    // Simple error display - you can enhance this
     alert(message);
   }
 
   showSuccess() {
-    // Simple success display - you can enhance this
     alert('Thank you for subscribing! Check your email for the discount code.');
   }
 
   async submitForm(email) {
     try {
-      // Simulate API call
       await this.mockApiCall(email);
       
-      // Reset form and close modal
       this.form.reset();
       this.showSuccess();
       this.hide();
@@ -144,7 +130,6 @@ class Modal {
     }
   }
 
-  // Mock API call - replace with real API endpoint
   mockApiCall(email) {
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -154,29 +139,23 @@ class Modal {
     });
   }
 
-  // Public method to manually show modal
   open() {
     this.show();
   }
 
-  // Public method to manually close modal
   close() {
     this.hide();
   }
 }
 
-// Initialize modal when DOM is loaded
 function initModal() {
-  const modal = new Modal('#modal', 1000); // Show after 1 second
+  const modal = new Modal('#modal', 1000);
   
-  // Make modal globally accessible if needed
   window.modalInstance = modal;
 }
 
-// Auto-initialize
 document.addEventListener('DOMContentLoaded', initModal);
 
-// Also initialize if DOM is already loaded
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initModal);
 } else {

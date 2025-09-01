@@ -33,7 +33,6 @@ function initFeaturedSwiper() {
     
     on: {
       init: function() {
-        console.log('Featured swiper initialized');
         this.update();
       },
       slideChange: function() {
