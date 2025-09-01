@@ -28,19 +28,47 @@ function initFooterIcons() {
     const baseSpritePath = currentHref.split('#')[0];
     
     item.addEventListener('toggle', () => {
-      if (item.open) {
-        const newHref = `${baseSpritePath}#icon-arrow-up`;
-        forceIconUpdate(icon, newHref);
-      } else {
-        const newHref = `${baseSpritePath}#icon-arrow-down`;
-        forceIconUpdate(icon, newHref);
+      if (window.innerWidth < 1280) {
+        if (item.open) {
+          const newHref = `${baseSpritePath}#icon-arrow-up`;
+          forceIconUpdate(icon, newHref);
+        } else {
+          const newHref = `${baseSpritePath}#icon-arrow-down`;
+          forceIconUpdate(icon, newHref);
+        }
       }
     });
   });
 }
 
+function handleDesktopFooterState() {
+  const accordionItems = document.querySelectorAll('.footer__accordion-item');
+  
+  if (accordionItems.length === 0) {
+    return;
+  }
+
+  if (window.innerWidth >= 1280) {
+    accordionItems.forEach((item) => {
+      item.open = true;
+    });
+  } else {
+    accordionItems.forEach((item) => {
+      item.open = false;
+    });
+  }
+}
+
 function initFooter() {
   initFooterIcons();
+  handleDesktopFooterState();
+  
+  window.addEventListener('resize', () => {
+    clearTimeout(window.footerResizeTimeout);
+    window.footerResizeTimeout = setTimeout(() => {
+      handleDesktopFooterState();
+    }, 150);
+  });
 }
 
 document.addEventListener('DOMContentLoaded', initFooter);
@@ -49,4 +77,4 @@ if (document.readyState !== 'loading') {
   initFooter();
 }
 
-export { initFooter, initFooterIcons };
+export { initFooter, initFooterIcons, handleDesktopFooterState };
