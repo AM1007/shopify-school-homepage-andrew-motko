@@ -1,1 +1,63 @@
-<div>help section</div>
+<section class="help section">
+  <div class="container help__container">
+    <h2 class="help__title">Need help?</h2>
+    <form action="#" method="post" class="help__form">
+      <label class="help__label">
+        <span class="help__label-text">Name</span>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          class="help__input" 
+          placeholder="Enter name" 
+          required 
+          autocomplete="name" 
+          aria-required="true"
+        >
+      </label>
+
+      <label class="help__label">
+        <span class="help__label-text">Number</span>
+        <input 
+          type="tel" 
+          id="phone" 
+          name="phone" 
+          class="help__input" 
+          placeholder="Enter number" 
+          inputmode="tel"
+          required 
+          autocomplete="tel" 
+          aria-required="true"
+        >
+      </label>
+
+      <label class="help__label">
+        <span class="help__label-text">Email</span>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          class="help__input" 
+          placeholder="Enter email" 
+          required 
+          autocomplete="email" 
+          aria-required="true"
+        >
+      </label>
+
+      <label class="help__label">
+        <span class="help__label-text">Message</span>
+        <textarea 
+          id="message" 
+          name="message" 
+          class="help__textarea" 
+          placeholder="Enter your message"
+          required
+          aria-required="true"
+        ></textarea>
+      </label>
+
+      <button type="submit" aria-label="Send form data" class="help__button btn btn--black">Submit</button>
+    </form>
+  </div>
+</section>
